@@ -1,10 +1,14 @@
 # TM Text Mining Package for R
 library(tm)
 library(Rgraphviz)
+library(topicmodels)
 
 # Read in the Job Description data into R
 d <- read.csv("jobs-data.csv")
 d <- d$text
+
+#Removes carrige returns from data
+d <- gsub("\r?\n|\r", " ", d)
 
 # Data Cleaning: Make docs lower case, remove numbers,
 # remove stopwords, remove punctuation, remove excess
@@ -14,8 +18,8 @@ d <- removeNumbers(d)
 d <- removeWords(d, stopwords(kind="en"))
 d <- removePunctuation(d)
 d <- stripWhitespace(d)
-
 # Save cleaned description data as new spreadsheet
+
 write.csv(d, file="data-clean.csv")
 
 ############
@@ -53,3 +57,9 @@ plot(dtm, terms=findFreqTerms(dtm, lowfreq=lowNum, highfreq=highNum),
                                               fillcolor="lightblue", height="2.6", width="10.5",
                                               fontsize="14")))
 dev.off()
+
+####################
+## topic modeling ##
+####################
+k <- length(unique(data$Topic.Code))
+lda <- LDA(dtm, 5)

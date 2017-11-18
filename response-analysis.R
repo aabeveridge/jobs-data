@@ -39,7 +39,7 @@ colnames(freq) <- c("Word", "Freq")
 write.csv(freq, "freq.csv")
 
 ## Calculate top word correlations for "writing"
-writ.cor <- findAssocs(dtm, "design", corlimit=0.25)
+writ.cor <- findAssocs(dtm, "user", corlimit=0.35)
 writ.cor <- data.frame(writ.cor)
 writ.cor
 
