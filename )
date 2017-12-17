@@ -1,0 +1,297 @@
+removeWords                 package:tm                 R Documentation
+
+_R_e_m_o_v_e _W_o_r_d_s _f_r_o_m _a _T_e_x_t _D_o_c_u_m_e_n_t
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Remove words from a text document.
+
+_U_s_a_g_e:
+
+     ## S3 method for class 'character'
+     removeWords(x, words)
+     ## S3 method for class 'PlainTextDocument'
+     removeWords(x, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+       x: A character or text document.
+
+   words: A character vector giving the words to be removed.
+
+     ...: passed over argument ‘words’.
+
+_V_a_l_u_e:
+
+     The character or text document without the specified words.
+
+_S_e_e _A_l_s_o:
+
+     ‘getTransformations’ to list available transformation (mapping)
+     functions.
+
+     ‘remove_stopwords’ provided by package ‘tau’.
+
+_E_x_a_m_p_l_e_s:
+
+     data("crude")
+     crude[[1]]
+     removeWords(crude[[1]], stopwords("english"))
+     
+
+png                 package:grDevices                  R Documentation
+
+_B_M_P, _J_P_E_G, _P_N_G _a_n_d _T_I_F_F _g_r_a_p_h_i_c_s _d_e_v_i_c_e_s
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Graphics devices for BMP, JPEG, PNG and TIFF format bitmap files.
+
+_U_s_a_g_e:
+
+     bmp(filename = "Rplot%03d.bmp",
+         width = 480, height = 480, units = "px", pointsize = 12,
+         bg = "white", res = NA, ...,
+         type = c("cairo", "Xlib", "quartz"), antialias)
+     
+     jpeg(filename = "Rplot%03d.jpeg",
+          width = 480, height = 480, units = "px", pointsize = 12,
+          quality = 75,
+          bg = "white", res = NA, ...,
+          type = c("cairo", "Xlib", "quartz"), antialias)
+     
+     png(filename = "Rplot%03d.png",
+         width = 480, height = 480, units = "px", pointsize = 12,
+          bg = "white",  res = NA, ...,
+         type = c("cairo", "cairo-png", "Xlib", "quartz"), antialias)
+     
+     tiff(filename = "Rplot%03d.tiff",
+          width = 480, height = 480, units = "px", pointsize = 12,
+          compression = c("none", "rle", "lzw", "jpeg", "zip", "lzw+p", "zip+p"),
+          bg = "white", res = NA,  ...,
+          type = c("cairo", "Xlib", "quartz"), antialias)
+     
+_A_r_g_u_m_e_n_t_s:
+
+filename: the name of the output file.  The page number is substituted
+          if a C integer format is included in the character string, as
+          in the default.  (The result must be less than ‘PATH_MAX’
+          characters long, and may be truncated if not.  See
+          ‘postscript’ for further details.)  Tilde expansion is
+          performed where supported by the platform.
+
+   width: the width of the device.
+
+  height: the height of the device.
+
+   units: The units in which ‘height’ and ‘width’ are given.  Can be
+          ‘px’ (pixels, the default), ‘in’ (inches), ‘cm’ or ‘mm’.
+
+pointsize: the default pointsize of plotted text, interpreted as big
+          points (1/72 inch) at ‘res’ ppi.
+
+      bg: the initial background colour: can be overridden by setting
+          par("bg").
+
+ quality: the ‘quality’ of the JPEG image, as a percentage.  Smaller
+          values will give more compression but also more degradation
+          of the image.
+
+compression: the type of compression to be used.  Ignored for ‘type =
+          "quartz"’.
+
+     res: The nominal resolution in ppi which will be recorded in the
+          bitmap file, if a positive integer.  Also used for ‘units’
+          other than the default, and to convert points to pixels.
+
+     ...: for ‘type = "Xlib"’ only, additional arguments to the
+          underlying ‘X11’ device such as ‘fonts’ or ‘family’.
+
+          For types ‘"cairo"’ and ‘"quartz"’, the ‘family’ argument can
+          be supplied.  See the ‘Cairo fonts’ section in the help for
+          ‘X11’.
+
+    type: character string, one of ‘"Xlib"’ or ‘"quartz"’ (some macOS
+          builds) or ‘"cairo"’.  The latter will only be available if
+          the system was compiled with support for cairo - otherwise
+          ‘"Xlib"’ will be used.  The default is set by
+          ‘getOption("bitmapType")’ - the ‘out of the box’ default is
+          ‘"quartz"’ or ‘"cairo"’ where available, otherwise ‘"Xlib"’.
+
+antialias: for ‘type = "cairo"’, giving the type of anti-aliasing (if
+          any) to be used for fonts and lines (but not fills). See
+          ‘X11’.  The default is set by ‘X11.options’.  Also for ‘type
+          = "quartz"’, where antialiasing is used unless ‘antialias =
+          "none"’.
+
+_D_e_t_a_i_l_s:
+
+     Plots in PNG and JPEG format can easily be converted to many other
+     bitmap formats, and both can be displayed in modern web browsers.
+     The PNG format is lossless and is best for line diagrams and
+     blocks of colour.  The JPEG format is lossy, but may be useful for
+     image plots, for example.  BMP is a standard format on Windows.
+     TIFF is a meta-format: the default format written by ‘tiff’ is
+     lossless and stores RGB (and alpha where appropriate) values
+     uncompressed-such files are widely accepted, which is their main
+     virtue over PNG.
+
+     ‘png’ supports transparent backgrounds: use ‘bg = "transparent"’.
+     (Not all PNG viewers render files with transparency correctly.)
+     When transparency is in use in the ‘type = "Xlib"’ variant a very
+     light grey is used as the background and so appears as transparent
+     if used in the plot. This allows opaque white to be used, as in
+     the example.  The ‘type = "cairo"’, ‘type = "cairo-png"’ and ‘type
+     = "quartz"’ variants allow semi-transparent colours, including on
+     a transparent or semi-transparent background.
+
+     ‘tiff’ with types ‘"cairo"’ and ‘"quartz"’ supports
+     semi-transparent colours, including on a transparent or
+     semi-transparent background.  Compression type ‘"zip"’ is ‘deflate
+     (Adobe-style)’.  Compression types ‘"lzw+p"’ and ‘"zip+p"’ use
+     horizontal differencing (‘differencing predictor’, section 14 of
+     the TIFF specification) in combination with the compression
+     method, which is effective for continuous-tone images, especially
+     colour ones.
+
+     R can be compiled without support for some or all of the types for
+     each of these devices: this will be reported if you attempt to use
+     them on a system where they are not supported.  For ‘type =
+     "Xlib"’ they may not be usable unless the X11 display is available
+     to the owner of the R process.  ‘type = "cairo"’ requires cairo
+     1.2 or later.  ‘type = "quartz"’ uses the ‘quartz’ device and so
+     is only available where that is (on some macOS builds: see
+     ‘capabilities("aqua")’).
+
+     By default no resolution is recorded in the file, except for BMP.
+     Viewers will often assume a nominal resolution of 72 ppi when none
+     is recorded.  As resolutions in PNG files are recorded in
+     pixels/metre, the reported ppi value will be changed slightly.
+
+     For graphics parameters that make use of dimensions in inches
+     (including font sizes in points) the resolution used is ‘res’ (or
+     72 ppi if unset).
+
+     ‘png’ will normally use a palette if there are less than 256
+     colours on the page, and record a 24-bit RGB file otherwise (or a
+     32-bit ARGB file if ‘type = "cairo"’ and non-opaque colours are
+     used).  However, ‘type = "cairo-png"’ uses cairographics' PNG
+     backend which will never use a palette and normally creates a
+     larger 32-bit ARGB file-this may work better for specialist uses
+     with semi-transparent colours.
+
+     Quartz-produced PNG and TIFF plots with a transparent background
+     are recorded with a dark grey matte which will show up in some
+     viewers, including ‘Preview’ on macOS.
+
+     Unknown resolutions in BMP files are recorded as 72 ppi.
+
+_V_a_l_u_e:
+
+     A plot device is opened: nothing is returned to the R interpreter.
+
+_W_a_r_n_i_n_g_s:
+
+     Note that by default the ‘width’ and ‘height’ values are in pixels
+     not inches.  A warning will be issued if both are less than 20.
+
+     If you plot more than one page on one of these devices and do not
+     include something like ‘%d’ for the sequence number in ‘file’, the
+     file will contain the last page plotted.
+
+_D_i_f_f_e_r_e_n_c_e_s _b_e_t_w_e_e_n _O_S_e_s:
+
+     These functions are interfaces to three or more different
+     underlying devices.
+
+        • On Windows, devices based on plotting to a hidden screen
+          using Windows' GDI calls.
+
+        • On platforms with support for X11, plotting to a hidden X11
+          display.
+
+        • On macOS when working at the console and when R is compiled
+          with suitable support, using Apple's Quartz plotting system.
+
+        • Where support has been compiled in for cairographics,
+          plotting on cairo surfaces.  This may use the native platform
+          support for fonts, or it may use ‘fontconfig’ to support a
+          wide range of font formats.
+
+     Inevitably there will be differences between the options supported
+     and output produced.  Perhaps the most important are support for
+     antialiased fonts and semi-transparent colours: the best results
+     are likely to be obtained with the cairo- or Quartz-based devices
+     where available.
+
+     The default extensions are ‘.jpg’ and ‘.tif’ on Windows, and
+     ‘.jpeg’ and ‘.tiff’ elsewhere.
+
+_C_o_n_v_e_n_t_i_o_n_s:
+
+     This section describes the implementation of the conventions for
+     graphics devices set out in the “R Internals Manual”.
+
+        • The default device size is in pixels.
+
+        • Font sizes are in big points interpreted at ‘res’ ppi.
+
+        • The default font family is Helvetica.
+
+        • Line widths in 1/96 inch (interpreted at ‘res’ ppi), minimum
+          one pixel for ‘type = "Xlib"’, 0.01 for ‘type = "cairo"’.
+
+        • For ‘type = "Xlib"’ circle radii are in pixels with minimum
+          one.
+
+        • Colours are interpreted by the viewing application.
+
+     For ‘type = "quartz"’ see the help for ‘quartz’.
+
+_N_o_t_e:
+
+     For ‘type = "Xlib"’ these devices are based on the ‘X11’ device.
+     The colour model used will be that set up by ‘X11.options’ at the
+     time the first Xlib-based devices was opened (or the first after
+     all such devices have been closed).
+
+_A_u_t_h_o_r(_s):
+
+     Guido Masarotto and Brian Ripley
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     The PNG specification, <URL: http://www.w3.org/TR/PNG/>.
+
+     The TIFF specification, including extensions, at <URL:
+     https://partners.adobe.com/public/developer/tiff/>.
+
+_S_e_e _A_l_s_o:
+
+     ‘Devices’, ‘dev.print’
+
+     ‘capabilities’ to see if these devices are supported by this build
+     of R, and if ‘type = "cairo"’ is supported.
+
+     ‘bitmap’ provides an alternative way to generate plots in many
+     bitmap formats that does not depend on accessing the X11 display
+     but does depend on having GhostScript installed.
+
+_E_x_a_m_p_l_e_s:
+
+     ## these examples will work only if the devices are available
+     ## and cairo or an X11 display or a macOS display is available.
+     
+     ## copy current plot to a (large) PNG file
+     ## Not run: dev.print(png, file = "myplot.png", width = 1024, height = 768)
+     png(file = "myplot.png", bg = "transparent")
+     plot(1:10)
+     rect(1, 5, 3, 7, col = "white")
+     dev.off()
+     
+     ## will make myplot1.jpeg and myplot2.jpeg
+     jpeg(file = "myplot%d.jpeg")
+     example(rect)
+     dev.off()
+     
+

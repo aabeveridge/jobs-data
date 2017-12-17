@@ -1,0 +1,51 @@
+category,coding,terms
+Product,abstracts_summaries,"abstracts, summary, summaries"
+Product,database_content,"database, databases, knowledge, base, knowledge bases"
+Product,definitions_descriptions,"define, definition, definitions, description, descriptions"
+Product,grants_proposals,"grant, grants, bid, bid, proposal, proposals"
+Product,multimodal_video_content,"Video, multimedia, multimodal, multiple media, audio, multi-media, multi-modal"
+Product,newsletters,"newsletter, newletters"
+Product,presentations,"presentation, presentations"
+Product,promo_brabd_mktg_materials,"promotional, marketing"
+Product,reports,reports
+Product,social_media_content,"social media, social"
+Product,user_guides_tech_docs,"user guide, user guides, user documentation, specification, specifications"
+Product,website_content,"web content, content for the web, responsive content"
+Product,white_papers_articles_mss,"white paper, white papers, manuscript, manuscripts, journal article, journal articles, technical article, technical articles"
+Competency,audience_awareness,"user, audience, users"
+Competency,business_strategic_planning,"strategic planning, business planning"
+Competency,comm_client_customer,"client communication, work with customers, work with clients"
+Competency,comm_oral_verbal,"oral communication, present, speak, converse"
+Competency,comm_written,"writing, written, written communication"
+Competency,comm_unspecified,communication
+Competency,content_dev_mgmt,"content development, develop content, manage content, content management"
+Competency,editing,"edit, editing, editor, copyedit, copyediting, copy editor"
+Competency,project_planning_mgmt,"project planning, manage project, project, projects"
+Competency,research,"research, interview, interviews, interviewing"
+Competency,style_guides_standards,"style guide, develop standards, standards"
+Competency,subject_matter_familiarity,subject matter familiarity
+Competency,transl_complex_material,translate
+Competency,usability_testing,"usability, user experience, testing"
+Competency,visual_communication,"visual, layout, graphic, design"
+Competency,web_analytics,analytics
+Competency,website_design,"web design, website design"
+Competency,work_with_sme,"work with SMEs, SME"
+Technology,microsoft_office,"Microsoft, MS, MSWord, MSOffice, word, office"
+Technology,adobe_creative_suite,"Creative Suite, Adobe CS, Adobe CC, Creative Cloud"
+Technology,illustrator_fireworks,"Illustrator, Fireworks"
+Technology,photoshop,Photoshop
+Technology,indesign,InDesign
+Technology,acrobat,Acrobat
+Technology,dreamweaver,Dreamweaver
+Technology,quark,Quark
+Technology,agile_methodologies,"Agile, Scrum"
+Technology,html_etc,"HMTL, CSS, Javascript, jQuery, js"
+Technology,madcap_flare,Flare
+Technology,adobe_robohelp,Robohelp
+Technology,microsoft_sharpoint,Sharepoint
+Technology,framemaker,Framemaker
+Technology,dita,DITA
+Technology,database_etc,"SQL, Oracle"
+Technology,xml,XML
+Technology,visio,Visio
+Technology,cms_dms,"CMS, Content Management System, Drupal, Joomla, Wordpress"

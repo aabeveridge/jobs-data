@@ -9,8 +9,8 @@ library(lda)
 library(LDAvis)
 
 # Read in the Job Description data into R
-d <- read.csv("jobs-data.csv")
-d <- d$text
+d <- read.csv("id-data.csv")
+d <- d$description
 
 ##################
 # pre-processing #
