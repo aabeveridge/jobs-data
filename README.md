@@ -1,2 +1,2 @@
 # jobs-data
-Text Mining of Jobs Data
+Code Examples for IEEE Article using Monster.com data
